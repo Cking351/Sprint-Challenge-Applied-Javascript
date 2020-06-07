@@ -10,7 +10,7 @@
 //
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
-
+const mainDiv = document.querySelector('.header-container')
 function Header() {
   // Create all elements needed for the page
   const subDiv = document.createElement('div')
@@ -36,5 +36,4 @@ function Header() {
   return subDiv
 }
 
-const mainDiv = document.querySelector('.header-container')
 mainDiv.appendChild(Header())
