@@ -18,17 +18,17 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
-// axios.get('https://lambda-times-backend.herokuapp.com/articles')
-//     .then(response => {
-//         console.log(response)
-//     })
-//     .catch(error => {
-//         console.log(error)
-//     })
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response => {
+        console.log(response)
+    })
+    .catch(error => {
+        console.log(error)
+    })
 
     const theMainContainer = document.querySelector('.cards-container')
 
-    function theCreater(headline, picture, name) {
+    function theCreater(headline, authorPhoto, authorName) {
         const cardDiv = document.createElement('div')
         const headlineDiv = document.createElement('div')
         const authorDiv = document.createElement('add')
@@ -50,8 +50,33 @@
         headlineDiv.appendChild(nameSpan)
 
         headlineDiv.textContent = headline
-        image.src = picture
-        nameSpan.textContent = name
+        image.src = authorPhoto
+        nameSpan.textContent = authorName
         
         return cardDiv
     }
+
+    axios.get('https://lambda-times-backend.herokuapp.com/articles')
+        .then(response => {
+            response.data.articles.javascript.forEach(items => {
+                const cbMachine = theCreater(items.headline, items.authorPhoto, items.authorName)
+                return cbMachine
+            })
+            response.data.articles.bootstrap.forEach(items => {
+                const cbMachine = theCreater(items.headline, items.authorPhoto, items.authorName)
+                return cbMachine
+            })
+            response.data.articles.technology.forEach(items => {
+                const cbMachine = theCreater(items.headline, items.authorPhoto, items.authorName)
+                return cbMachine
+            })
+            response.data.articles.jquery.forEach(items => {
+                const cbMachine = theCreater(items.headline, items.authorPhoto, items.authorName)
+                return cbMachine
+            })
+            response.data.articles.node.forEach(items => {
+                const cbMachine = theCreater(items.headline, items.authorPhoto, items.authorName)
+                return cbMachine
+            })
+        })
+        
