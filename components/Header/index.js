@@ -24,7 +24,17 @@ function Header() {
   subspan.classList.add('temp')
 
   // Create text content
-  mainSpan.textContent = "SMARCH 28, 2019"
+  mainSpan.textContent = "MARCH 28, 2019"
   h1Title.textContent = 'Lambda Times'
   subspan.textContent = '98°'
+
+  // Append the elements
+  subDiv.appendChild(mainSpan)
+  subDiv.appendChild(h1Title)
+  subDiv.appendChild(subspan)
+
+  return subDiv
 }
+
+const mainDiv = document.querySelector('.header-container')
+mainDiv.appendChild(Header())
