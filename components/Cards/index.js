@@ -18,3 +18,39 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response => {
+        console.log(response)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+
+    let masterDiv = document.querySelector('.cards-container')
+
+    function articleCreater(content) {
+        const containerDiv = document.createElement('div')
+        const headlineDiv = document.createElement('div')
+        const authorDiv = document.createElement('div')
+        const imgDiv = document.createElement('div')
+        const image = document.createElement('img')
+        const nameSpan = document.createElement('span')
+
+        // Assign Classes to elements
+        containerDiv.classList.add('card')
+        headlineDiv.classList.add('headline')
+        authorDiv.classList.add('author')
+        imgDiv.classList.add('img-container')
+        
+        // Append the elements
+        masterDiv.appendChild(containerDiv)
+        containerDiv.appendChild(headlineDiv)
+        headlineDiv.appendChild(authorDiv)
+        authorDiv.appendChild(imgDiv)
+        imgDiv.appendChild(image)
+        nameSpan.appendChild(authorDiv)
+
+        // Create content
+        
+
+    }
