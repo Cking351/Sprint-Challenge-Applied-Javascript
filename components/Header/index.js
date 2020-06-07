@@ -10,5 +10,30 @@
 //
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
+const mainDiv = document.querySelector('.header-container')
+function Header() {
+  // Create all elements needed for the page
+  const subDiv = document.createElement('div')
+  const mainSpan = document.createElement('span')
+  const h1Title = document.createElement('h1')
+  const subspan = document.createElement('span')
 
-function Header() {}
+  // Assign Classes
+  subDiv.classList.add('header')
+  mainSpan.classList.add('date')
+  subspan.classList.add('temp')
+
+  // Create text content
+  mainSpan.textContent = "MARCH 28, 2019"
+  h1Title.textContent = 'Lambda Times'
+  subspan.textContent = '98°'
+
+  // Append the elements
+  subDiv.appendChild(mainSpan)
+  subDiv.appendChild(h1Title)
+  subDiv.appendChild(subspan)
+
+  return subDiv
+}
+
+mainDiv.appendChild(Header())
