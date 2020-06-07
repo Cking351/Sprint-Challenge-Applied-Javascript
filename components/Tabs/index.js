@@ -8,3 +8,14 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+  .then(response => {
+    console.log('Heres that data', response)
+  })
+  .catch(error => {
+    console.log('This shouldnt be happening..', error)
+  })
+
+  function contentCreater(stacks) {
+    
+  }
